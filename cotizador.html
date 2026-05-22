@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cotizador | Tellus Industrias</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="cotizador.css">
+</head>
+<body>
+  <main class="quote-app">
+    <section class="login-screen" id="loginScreen">
+      <div class="login-brand">
+        <img src="assets/logo-tellus.png" alt="Tellus Industrias">
+        <div>
+          <p>Tellus Industrias</p>
+          <span>Lockers metálicos premium</span>
+        </div>
+      </div>
+
+      <form class="login-card" id="loginForm">
+        <span class="eyebrow">Acceso privado</span>
+        <h1>Cotizador profesional</h1>
+        <p>Ingresa para crear cotizaciones, editar productos y exportar el documento en PDF.</p>
+
+        <label>
+          Usuario
+          <input type="text" name="usuario" autocomplete="username" required>
+        </label>
+        <label>
+          Contraseña
+          <input type="password" name="password" autocomplete="current-password" required>
+        </label>
+        <p class="login-error" id="loginError" role="alert"></p>
+        <button class="primary-button" type="submit">Ingresar</button>
+      </form>
+    </section>
+
+    <section class="workspace hidden" id="workspace">
+      <aside class="quote-panel">
+        <div class="panel-head">
+          <div class="panel-brand">
+            <img src="assets/logo-tellus.png" alt="Tellus Industrias">
+            <div>
+              <strong>Tellus Industrias</strong>
+              <span>Generador de cotizaciones</span>
+            </div>
+          </div>
+          <button class="ghost-button" id="logoutButton" type="button">Salir</button>
+        </div>
+
+        <section class="company-switcher" aria-label="Cambiar empresa">
+          <span>Empresa</span>
+          <div id="companySwitcher"></div>
+        </section>
+
+        <form class="quote-form" id="quoteForm">
+          <fieldset>
+            <legend>Datos del cliente</legend>
+            <label>Señor(es)<input type="text" id="clientName" placeholder="Nombre o razón social"></label>
+            <label>RUC / DNI<input type="text" id="clientDoc" placeholder="Documento"></label>
+            <label>Dirección<input type="text" id="clientAddress" placeholder="Dirección del cliente"></label>
+          </fieldset>
+
+          <fieldset>
+            <legend>Productos</legend>
+            <div class="product-row">
+              <label>Producto
+                <select id="productSelect"></select>
+              </label>
+              <button class="secondary-button" id="addProductButton" type="button">Agregar</button>
+            </div>
+            <div class="items-editor" id="itemsEditor"></div>
+          </fieldset>
+
+          <fieldset class="two-cols">
+            <legend>Totales</legend>
+            <label>IGV %
+              <input type="number" id="igvRate" min="0" step="0.01" value="18">
+            </label>
+            <label class="check-line">
+              <input type="checkbox" id="discountEnabled">
+              Aplicar descuento
+            </label>
+            <label id="discountField" class="hidden">Descuento S/
+              <input type="number" id="discountAmount" min="0" step="0.01" value="0">
+            </label>
+          </fieldset>
+
+          <fieldset>
+            <legend>Observaciones y condiciones</legend>
+            <label>Observaciones<textarea id="observations" rows="3" placeholder="Escribe observaciones de la cotización">Forrado con strecth fill y puesto en dirección</textarea></label>
+            <label>Condición de pago
+              <select id="paymentMode">
+                <option value="Contraentrega">Contraentrega</option>
+                <option value="Adelanto del 50% y el 50% al momento de la entrega.">Adelanto del 50% y el 50% al momento de la entrega</option>
+                <option value="manual">Manual</option>
+              </select>
+            </label>
+            <label id="paymentManualField" class="hidden">Detalle manual
+              <input type="text" id="paymentManual" placeholder="Ejemplo: Pago a 15 días">
+            </label>
+            <label>Tiempo de ejecución
+              <select id="executionMode">
+                <option value="Inmediato">Inmediato</option>
+                <option value="manual">Manual</option>
+              </select>
+            </label>
+            <label id="executionManualField" class="hidden">Detalle manual
+              <input type="text" id="executionManual" placeholder="Ejemplo: 7 días hábiles">
+            </label>
+            <label>Tiempo de garantía
+              <input type="text" id="warranty" value="1 AÑO">
+            </label>
+          </fieldset>
+
+          <fieldset>
+            <legend>Cuentas bancarias</legend>
+            <div class="bank-options" id="bankOptions"></div>
+          </fieldset>
+        </form>
+      </aside>
+
+      <section class="preview-shell">
+        <div class="preview-toolbar">
+          <div>
+            <span>Código</span>
+            <strong id="quoteCodeLabel"></strong>
+          </div>
+          <button class="secondary-button" id="newQuoteButton" type="button">Nuevo código</button>
+          <button class="primary-button" id="downloadPdfButton" type="button">Exportar PDF</button>
+        </div>
+
+        <div class="pdf-document" id="quotePreview"></div>
+      </section>
+    </section>
+  </main>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-YcsIPGdhPK4P/uRW6/sruonlYj+I5b56u8z7Ihhci3mtPXNHTXxk0KQynOCLxWdl3s8N7g6M9l+g4GeHbM8TSA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="cotizador.js"></script>
+</body>
+</html>
