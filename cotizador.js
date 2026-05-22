@@ -50,7 +50,7 @@ const PRODUCT_DATABASE = [
     id: 'locker-1c-1',
     name: 'Locker de 1 cuerpo 1 casillero',
     defaultPrice: '1200',
-    imageUrl: 'assets/lock/1-1.jpg',
+    imageUrl: 'assets/lock/1-1.JPG',
     thickness: '0.6mm',
     measures: {
       alto: '1.80mts',
