@@ -34,7 +34,7 @@ const COMPANY_PROFILES = {
     phones: ['+51 906 609 721'],
     email: 'armlima@gmail.com',
     website: '',
-    logo: 'assets/arlima-logo.svg',
+    logo: 'assets/LogoArlima.JPG',
     prefix: 'ARL',
     color: '#101010',
     color2: '#2b2b2b',
