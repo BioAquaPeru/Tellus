@@ -1,7 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 120" role="img" aria-label="ARLIMA LOCKER">
-  <rect width="320" height="120" rx="14" fill="#ffffff"/>
-  <path d="M48 84 82 28h24l34 56h-25l-6-11H78l-6 11H48Zm39-29h13l-7-13-6 13Z" fill="#C636D3"/>
-  <path d="M151 32h23v32h42v20h-65V32Z" fill="#1f1f28"/>
-  <text x="224" y="57" fill="#1f1f28" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="800">ARLIMA</text>
-  <text x="224" y="80" fill="#C636D3" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="800">LOCKER</text>
-</svg>
